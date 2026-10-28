@@ -16,7 +16,7 @@ class MainApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: AppTheme.dark,
-        home: Scaffold(body: Center(child: HomeScreen())),
+        home: const HomeScreen(),
       ),
     );
   }

@@ -1,5 +1,6 @@
 import 'package:breakify/breakify.dart';
 import 'package:flutter/material.dart';
+import 'package:page_crealo/desing_system/organisms/banner_section.dart';
 import 'package:page_crealo/desing_system/organisms/services_section.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -10,7 +11,7 @@ class HomeScreen extends StatelessWidget {
     return BreakifyDebugBanner(
       child: Scaffold(
         body: SingleChildScrollView(
-          child: Column(children: [ServicesSection()]),
+          child: Column(children: [BannerSection(), ServicesSection()]),
         ),
       ),
     );

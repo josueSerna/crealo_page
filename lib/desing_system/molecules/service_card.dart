@@ -10,7 +10,7 @@ class ServiceCard extends StatelessWidget {
     super.key,
     required this.title,
     required this.description,
-    this.minHeight = const BreakifyValue(sm: 340, md: 330, lg: 280),
+    this.minHeight = const BreakifyValue(sm: 340.0, md: 330.0, lg: 280.0),
     this.icon,
     this.buttonLabel = 'Ver más',
     this.onPressed,
@@ -37,34 +37,23 @@ class ServiceCard extends StatelessWidget {
           color: AppColors.textSecondary.withValues(alpha: 0.15),
         ),
       ),
-      child: LayoutBuilder(
-        builder: (context, constraints) {
-          final hasFiniteHeight = constraints.maxHeight.isFinite;
-
-          return Column(
-            mainAxisSize: hasFiniteHeight ? MainAxisSize.max : MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              if (icon != null) ...[
-                Icon(icon, size: 32, color: AppColors.primary),
-                const SizedBox(height: 16),
-              ],
-              Text(
-                title,
-                style: AppTextStyles.h3.copyWith(color: AppColors.white),
-              ),
-              const SizedBox(height: 12),
-              Text(
-                description,
-                style: AppTextStyles.body.copyWith(
-                  color: AppColors.textSecondary,
-                ),
-              ),
-              if (hasFiniteHeight) const Spacer(),
-              AppButton(label: buttonLabel, onPressed: onPressed ?? () {}),
-            ],
-          );
-        },
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          if (icon != null) ...[
+            Icon(icon, size: 32, color: AppColors.primary),
+            const SizedBox(height: 16),
+          ],
+          Text(title, style: AppTextStyles.h3.copyWith(color: AppColors.white)),
+          const SizedBox(height: 12),
+          Text(
+            description,
+            style: AppTextStyles.body.copyWith(color: AppColors.textSecondary),
+          ),
+          const Spacer(),
+          SizedBox(height: 20),
+          AppButton(label: buttonLabel, onPressed: onPressed ?? () {}),
+        ],
       ),
     );
   }
