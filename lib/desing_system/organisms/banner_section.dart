@@ -4,7 +4,14 @@ import 'package:page_crealo/desing_system/tokens/app_colors.dart';
 import 'package:page_crealo/desing_system/tokens/app_text_styles.dart';
 
 class BannerSection extends StatelessWidget {
-  const BannerSection({super.key});
+  const BannerSection({
+    super.key,
+    this.onExplorePortfolio,
+    this.onViewServices,
+  });
+
+  final VoidCallback? onExplorePortfolio;
+  final VoidCallback? onViewServices;
 
   static const _actionColumns = BreakifyValue<int>(sm: 1, md: 2);
   static const _horizontalPadding = BreakifyFluidValue(sm: 20, md: 40, lg: 64);
@@ -55,7 +62,10 @@ class BannerSection extends StatelessWidget {
                 ),
               ),
               SizedBox(height: gap + 4),
-              const _Actions(),
+              _Actions(
+                onExplorePortfolio: onExplorePortfolio,
+                onViewServices: onViewServices,
+              ),
             ],
           ),
         ),
@@ -144,7 +154,10 @@ class _TagChip extends StatelessWidget {
 }
 
 class _Actions extends StatelessWidget {
-  const _Actions();
+  const _Actions({this.onExplorePortfolio, this.onViewServices});
+
+  final VoidCallback? onExplorePortfolio;
+  final VoidCallback? onViewServices;
 
   @override
   Widget build(BuildContext context) {
@@ -161,7 +174,7 @@ class _Actions extends StatelessWidget {
             label: 'EXPLORAR PORTAFOLIO',
             icon: Icons.arrow_downward_rounded,
             filled: true,
-            onPressed: () {},
+            onPressed: onExplorePortfolio,
           ),
         ),
         Align(
@@ -170,7 +183,7 @@ class _Actions extends StatelessWidget {
             label: 'VER SERVICIOS',
             icon: Icons.north_east_rounded,
             filled: false,
-            onPressed: () {},
+            onPressed: onViewServices,
           ),
         ),
       ],
@@ -189,7 +202,7 @@ class _PillButton extends StatelessWidget {
   final String label;
   final IconData icon;
   final bool filled;
-  final VoidCallback onPressed;
+  final VoidCallback? onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -200,9 +213,7 @@ class _PillButton extends StatelessWidget {
     return Material(
       color: filled ? AppColors.backgroundLight : Colors.transparent,
       shape: StadiumBorder(
-        side: filled
-            ? BorderSide.none
-            : BorderSide(color: AppColors.white.withValues(alpha: 0.2)),
+        side: filled ? BorderSide.none : BorderSide(color: AppColors.white),
       ),
       child: InkWell(
         customBorder: const StadiumBorder(),

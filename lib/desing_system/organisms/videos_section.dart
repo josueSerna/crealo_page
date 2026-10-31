@@ -33,8 +33,10 @@ class _VideosSectionState extends State<VideosSection> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               const AppSectionTitle(
-                title: 'Nuestros videos',
-                subtitle: 'Mira cómo transformamos ideas en contenido.',
+                title: 'Contenido Audiovisual',
+                subtitle:
+                    'Le damos forma a tus ideas a través del lente.\n'
+                    '(Toca dos veces un video para verlo).',
                 titleColor: AppColors.backgroundLight,
                 subtitleColor: AppColors.backgroundLight,
               ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:page_crealo/data/social_links.dart';
 import 'package:page_crealo/desing_system/tokens/app_colors.dart';
 import 'package:page_crealo/desing_system/tokens/app_text_styles.dart';
 import 'package:page_crealo/widgets/social_button.dart';
@@ -35,11 +36,23 @@ class AboutContent extends StatelessWidget {
 
         const Row(
           children: [
-            SocialButton(icon: SimpleIcons.instagram, label: 'Instagram'),
+            SocialButton(
+              icon: SimpleIcons.instagram,
+              label: 'Instagram',
+              url: SocialLinks.instagram,
+            ),
             SizedBox(width: 12),
-            SocialButton(icon: SimpleIcons.tiktok, label: 'TikTok'),
+            SocialButton(
+              icon: SimpleIcons.tiktok,
+              label: 'TikTok',
+              url: SocialLinks.tiktok,
+            ),
             SizedBox(width: 12),
-            SocialButton(icon: SimpleIcons.whatsapp, label: 'WhatsApp'),
+            SocialButton(
+              icon: SimpleIcons.whatsapp,
+              label: 'WhatsApp',
+              url: SocialLinks.whatsapp,
+            ),
           ],
         ),
 

@@ -13,6 +13,7 @@ dependencies:
       ref: v0.3.0
   flutter:
     sdk: flutter
+  flutter_svg: ^2.3.2
   simple_icons: ^16.23.0
   url_launcher: ^6.3.3
 
@@ -29,6 +30,6 @@ flutter:
         - asset: assets/fonts/Montserrat-VariableFont_wght.ttf
   assets:
     - assets/images/crealo_profile.jpeg
-    - assets/images/logos/logo_min.png
-    - assets/images/logos/logo_max.png
+    - assets/images/logos/logo_min.svg
+    - assets/images/logos/logo_max.svg
 

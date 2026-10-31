@@ -1,5 +1,7 @@
 import 'package:breakify/breakify.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:page_crealo/data/social_links.dart';
 import 'package:page_crealo/desing_system/tokens/app_colors.dart';
 import 'package:page_crealo/desing_system/tokens/app_text_styles.dart';
 import 'package:simple_icons/simple_icons.dart';
@@ -16,9 +18,6 @@ class FooterSection extends StatelessWidget {
   final List<FooterLink> links;
 
   // TODO: reemplazar por los enlaces reales de Créalo.
-  static const _whatsappUrl = 'https://wa.me/';
-  static const _instagramUrl = 'https://www.instagram.com/';
-  static const _tiktokUrl = 'https://www.tiktok.com/';
 
   const FooterSection({super.key, required this.links});
 
@@ -37,8 +36,8 @@ class FooterSection extends StatelessWidget {
             BreakifyBuilder(
               breakpoints: context.breakifyBreakpoints,
               builder: (context, breakpoint, constraints) {
-                final logo = Image.asset(
-                  'assets/images/logos/logo_max.png',
+                final logo = SvgPicture.asset(
+                  'assets/images/logos/logo_max.svg',
                   height: 260,
                 );
                 final navigation = _FooterColumn(
@@ -54,17 +53,17 @@ class FooterSection extends StatelessWidget {
                     _FooterContact(
                       icon: SimpleIcons.whatsapp,
                       label: 'WhatsApp',
-                      url: _whatsappUrl,
+                      url: SocialLinks.whatsapp,
                     ),
                     _FooterContact(
                       icon: SimpleIcons.instagram,
                       label: 'Instagram',
-                      url: _instagramUrl,
+                      url: SocialLinks.instagram,
                     ),
                     _FooterContact(
                       icon: SimpleIcons.tiktok,
                       label: 'TikTok',
-                      url: _tiktokUrl,
+                      url: SocialLinks.tiktok,
                     ),
                   ],
                 );

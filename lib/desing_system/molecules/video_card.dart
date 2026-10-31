@@ -89,6 +89,7 @@ class _VideoThumbnail extends StatelessWidget {
                 Image.network(
                   video.thumbnailUrl,
                   fit: BoxFit.cover,
+                  cacheWidth: 600,
                   errorBuilder: (_, _, _) => const _ThumbnailPlaceholder(),
                 )
               else
