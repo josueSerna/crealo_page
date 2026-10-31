@@ -15,7 +15,7 @@ class MainApp extends StatelessWidget {
     return BreakifyScope(
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        theme: AppTheme.dark,
+        theme: AppTheme.ligth,
         home: const HomeScreen(),
       ),
     );

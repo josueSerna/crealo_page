@@ -1,38 +1,48 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 abstract final class AppTextStyles {
-  static final TextStyle h1 = GoogleFonts.montserrat(
-    fontSize: 64,
+  static const String _fontFamily = 'Montserrat';
+
+  // Headings
+  static const TextStyle h1 = TextStyle(
+    fontFamily: _fontFamily,
+    fontSize: 84,
     fontWeight: FontWeight.w800,
     height: 1.1,
   );
 
-  static final TextStyle h2 = GoogleFonts.montserrat(
+  static const TextStyle h2 = TextStyle(
+    fontFamily: _fontFamily,
     fontSize: 44,
     fontWeight: FontWeight.w700,
     height: 1.2,
   );
 
-  static final TextStyle h3 = GoogleFonts.montserrat(
+  static const TextStyle h3 = TextStyle(
+    fontFamily: _fontFamily,
     fontSize: 28,
     fontWeight: FontWeight.w700,
     height: 1.3,
   );
 
-  static final TextStyle body = GoogleFonts.montserrat(
+  // Body
+  static const TextStyle body = TextStyle(
+    fontFamily: _fontFamily,
     fontSize: 16,
     fontWeight: FontWeight.w400,
     height: 1.6,
   );
 
-  static final TextStyle small = GoogleFonts.montserrat(
+  static const TextStyle small = TextStyle(
+    fontFamily: _fontFamily,
     fontSize: 14,
     fontWeight: FontWeight.w400,
     height: 1.5,
   );
 
-  static final TextStyle button = GoogleFonts.montserrat(
+  // Buttons
+  static const TextStyle button = TextStyle(
+    fontFamily: _fontFamily,
     fontSize: 16,
     fontWeight: FontWeight.w600,
   );

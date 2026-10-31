@@ -1,6 +1,5 @@
 import 'package:breakify/breakify.dart';
 import 'package:flutter/material.dart';
-import 'package:page_crealo/widgets/full_viewport_section.dart';
 
 import '../atoms/app_section_title.dart';
 import '../molecules/service_card.dart';
@@ -11,15 +10,17 @@ class ServicesSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FullViewportSection(
+    return BreakifySection(
+      fullViewport: true,
+      backgroundColor: AppColors.backgroundLight,
       child: Container(
         width: double.infinity,
-        color: AppColors.backgroundDark,
+        padding: EdgeInsets.all(5),
         child: BreakifyContainer(
           maxWidth: const BreakifyValue(sm: 1200.0),
           padding: const BreakifyValue(
-            sm: EdgeInsets.symmetric(horizontal: 20, vertical: 56),
-            lg: EdgeInsets.symmetric(horizontal: 32, vertical: 80),
+            sm: EdgeInsets.symmetric(horizontal: 10, vertical: 56),
+            lg: EdgeInsets.symmetric(horizontal: 10, vertical: 50),
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -28,21 +29,21 @@ class ServicesSection extends StatelessWidget {
                 title: 'Nuestros servicios',
                 subtitle:
                     'Soluciones creativas para conectar tu marca con las personas.',
-                titleColor: AppColors.white,
+                titleColor: AppColors.primary,
                 subtitleColor: AppColors.textSecondary,
               ),
               const SizedBox(height: 40),
               BreakifyGrid(
-                columns: BreakifyValue(sm: 1, md: 2, lg: 3),
-                spacing: const BreakifyValue(sm: 20.0),
-                physics: const NeverScrollableScrollPhysics(),
+                columns: const BreakifyValue(sm: 1, md: 2, lg: 3),
+                spacing: BreakifyFluidValue(sm: 5),
+                heightMode: BreakifyHeightMode.equal,
                 shrinkWrap: true,
-                equalHeight: true,
+                physics: const NeverScrollableScrollPhysics(),
                 children: [
                   ServiceCard(
                     title: 'Gestión de redes sociales',
                     description:
-                        'Construimos una presencia digital con intención, desde la estrategia y la creación de contenido hasta la planificación de tus redes.',
+                        'Creamos una presencia digital con intención, desde estrategia hasta contenido y planificación para tus redes.',
                     icon: Icons.palette_outlined,
                     buttonLabel: 'Ver planes',
                     onPressed: () {},
@@ -50,7 +51,7 @@ class ServicesSection extends StatelessWidget {
                   ServiceCard(
                     title: 'Estrategia de marca',
                     description:
-                        'Definimos la dirección de tu marca, su público, personalidad y comunicación para que dejes de improvisar y empieces a conectar.',
+                        'Definimos tu marca, público, personalidad y comunicación para conectar con claridad y coherencia.',
                     icon: Icons.campaign_outlined,
                     buttonLabel: 'Construir mi marca',
                     onPressed: () {},
@@ -58,7 +59,7 @@ class ServicesSection extends StatelessWidget {
                   ServiceCard(
                     title: 'Producción audiovisual',
                     description:
-                        'Convertimos ideas en piezas audiovisuales para marcas, campañas, productos y lanzamientos, desde el concepto hasta la edición final.',
+                        'Convertimos ideas en piezas audiovisuales para marcas, campañas y lanzamientos desde el concepto hasta la edición.',
                     icon: Icons.movie_creation_outlined,
                     buttonLabel: 'Crear mi contenido',
                     onPressed: () {},
@@ -66,7 +67,7 @@ class ServicesSection extends StatelessWidget {
                   ServiceCard(
                     title: 'Fotografía de marca y producto',
                     description:
-                        'Creamos fotografías que reflejan la esencia de tu marca y hacen que tus productos destaquen en redes, catálogos y campañas.',
+                        'Fotografiamos tu marca y tus productos para destacar en redes, catálogos y campañas.',
                     icon: Icons.camera,
                     buttonLabel: 'Ver servicio fotográfico',
                     onPressed: () {},
@@ -74,7 +75,7 @@ class ServicesSection extends StatelessWidget {
                   ServiceCard(
                     title: 'Capacitaciones — Créalo 360',
                     description:
-                        'Aprende a gestionar Instagram estratégicamente: crea contenido, organiza tu feed y alinea a tu equipo para comunicar mejor.',
+                        'Aprende a manejar Instagram con estrategia, contenido y orden para comunicar mejor tu marca.',
                     icon: Icons.threesixty,
                     buttonLabel: 'Conocer capacitaciones',
                     onPressed: () {},

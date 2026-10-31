@@ -17,6 +17,8 @@ class AppButton extends StatelessWidget {
         foregroundColor: AppColors.white,
         textStyle: AppTextStyles.button,
         padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+        minimumSize: Size.zero,
+        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
         elevation: 0,
       ),

@@ -1,13 +1,12 @@
 import 'package:breakify/breakify.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:page_crealo/desing_system/tokens/app_colors.dart';
 import 'package:page_crealo/desing_system/tokens/app_text_styles.dart';
-import 'package:page_crealo/widgets/full_viewport_section.dart';
 
 class BannerSection extends StatelessWidget {
   const BannerSection({super.key});
 
+  static const _actionColumns = BreakifyValue<int>(sm: 1, md: 2);
   static const _horizontalPadding = BreakifyFluidValue(sm: 20, md: 40, lg: 64);
   static const _verticalPadding = BreakifyFluidValue(sm: 56, md: 80, lg: 112);
 
@@ -24,11 +23,11 @@ class BannerSection extends StatelessWidget {
     final vPad = context.resolve(_verticalPadding);
     final gap = context.resolve(_blockSpacing);
 
-    return FullViewportSection(
-      backgroundColor: AppColors.backgroundDark,
+    return BreakifySection(
+      fullViewport: true,
+      backgroundColor: AppColors.primary,
       child: Container(
         width: double.infinity,
-        color: AppColors.backgroundDark,
         padding: EdgeInsets.symmetric(horizontal: hPad, vertical: vPad),
         child: BreakifyContainer(
           maxWidth: const BreakifyValue(sm: 1100),
@@ -36,7 +35,7 @@ class BannerSection extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const _TagChip(label: 'CREATIVE STRATEGY & VISUAL DESIGN'),
+              const _TagChip(label: 'Marketing Creativo'),
               SizedBox(height: gap),
               _Headline(
                 scriptSize: context.resolve(_scriptFontSize),
@@ -46,17 +45,17 @@ class BannerSection extends StatelessWidget {
               ConstrainedBox(
                 constraints: const BoxConstraints(maxWidth: 520),
                 child: Text(
-                  'Diseño audaz, producción UGC y estrategias de impacto '
-                  'para marcas visionarias.',
+                  'Menos de lo mismo, mas de lo que te '
+                  'hace innolvidable',
                   textAlign: TextAlign.center,
                   style: AppTextStyles.body.copyWith(
                     fontSize: context.resolve(_bodyFontSize),
-                    color: AppColors.textSecondary,
+                    color: AppColors.backgroundLight,
                   ),
                 ),
               ),
               SizedBox(height: gap + 4),
-              _Actions(spacing: context.resolve(_buttonSpacing)),
+              const _Actions(),
             ],
           ),
         ),
@@ -77,14 +76,9 @@ class _Headline extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         Text(
-          'No es tan difícil, solo',
+          'No existe fórmula, solo',
           textAlign: TextAlign.center,
-          style: GoogleFonts.playfairDisplay(
-            fontSize: scriptSize,
-            fontStyle: FontStyle.italic,
-            fontWeight: FontWeight.w400,
-            color: AppColors.backgroundLight,
-          ),
+          style: AppTextStyles.h3.copyWith(color: AppColors.backgroundLight),
         ),
         FittedBox(
           fit: BoxFit.scaleDown,
@@ -96,7 +90,7 @@ class _Headline extends StatelessWidget {
               fontWeight: FontWeight.w800,
               height: 1.0,
               letterSpacing: -brandSize * 0.04,
-              color: AppColors.primary,
+              color: AppColors.backgroundLight,
             ),
           ),
         ),
@@ -150,29 +144,34 @@ class _TagChip extends StatelessWidget {
 }
 
 class _Actions extends StatelessWidget {
-  const _Actions({required this.spacing});
-
-  final double spacing;
+  const _Actions();
 
   @override
   Widget build(BuildContext context) {
-    return Wrap(
-      alignment: WrapAlignment.center,
-      crossAxisAlignment: WrapCrossAlignment.center,
-      spacing: spacing,
-      runSpacing: spacing,
+    return BreakifyGrid(
+      columns: BannerSection._actionColumns,
+      spacing: BannerSection._buttonSpacing,
+      heightMode: BreakifyHeightMode.equalInRow,
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
       children: [
-        _PillButton(
-          label: 'EXPLORAR PORTAFOLIO',
-          icon: Icons.arrow_downward_rounded,
-          filled: true,
-          onPressed: () {},
+        Align(
+          alignment: Alignment.center,
+          child: _PillButton(
+            label: 'EXPLORAR PORTAFOLIO',
+            icon: Icons.arrow_downward_rounded,
+            filled: true,
+            onPressed: () {},
+          ),
         ),
-        _PillButton(
-          label: 'VER SERVICIOS',
-          icon: Icons.north_east_rounded,
-          filled: false,
-          onPressed: () {},
+        Align(
+          alignment: Alignment.center,
+          child: _PillButton(
+            label: 'VER SERVICIOS',
+            icon: Icons.north_east_rounded,
+            filled: false,
+            onPressed: () {},
+          ),
         ),
       ],
     );
