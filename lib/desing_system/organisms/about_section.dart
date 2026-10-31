@@ -25,6 +25,10 @@ class AboutSection extends StatelessWidget {
             spacing: const BreakifyValue(sm: 40.0, lg: 64.0),
             distributeEvenly: true,
             crossAxisAlignment: CrossAxisAlignment.center,
+            order: const BreakifyLayoutOrder(
+              layoutBelow: BreakifyLayoutTemplate.inColumn,
+              layoutAbove: BreakifyLayoutTemplate.twoColumns,
+            ),
             children: const [AboutContent(), AboutImage()],
           ),
         ),

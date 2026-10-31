@@ -30,7 +30,7 @@ packages:
     description:
       path: "."
       ref: "v0.3.0"
-      resolved-ref: "141b3be24266471748353ebc6cd10b4676c1a6cd"
+      resolved-ref: "466cb2ae080d86cdbd53636627e94d334dd7158c"
       url: "https://github.com/josueSerna/breakify.git"
     source: git
     version: "0.3.0"
