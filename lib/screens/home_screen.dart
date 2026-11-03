@@ -1,6 +1,5 @@
 import 'package:breakify/breakify.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:page_crealo/desing_system/organisms/about_section.dart';
 import 'package:page_crealo/desing_system/organisms/banner_section.dart';
 import 'package:page_crealo/desing_system/organisms/collage_section.dart';
@@ -38,7 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: BreakifyNavbar(
-        logo: SvgPicture.asset('assets/images/logos/logo_min.svg', height: 80),
+        logo: Image.asset('assets/images/logos/logo_min.png', height: 80),
         items: [
           BreakifyNavbarItem(
             label: 'Inicio',

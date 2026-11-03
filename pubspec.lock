@@ -28,11 +28,10 @@ packages:
   breakify:
     dependency: "direct main"
     description:
-      path: "."
-      ref: "v0.3.0"
-      resolved-ref: "466cb2ae080d86cdbd53636627e94d334dd7158c"
-      url: "https://github.com/josueSerna/breakify.git"
-    source: git
+      name: breakify
+      sha256: "9d479262b7d215f54114ea65df8dcab0ebdaf5e0d8df693d5afb7d6e1a4ec3d5"
+      url: "https://pub.dev"
+    source: hosted
     version: "0.3.0"
   characters:
     dependency: transitive
