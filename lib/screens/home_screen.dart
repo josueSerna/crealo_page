@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:page_crealo/desing_system/organisms/about_section.dart';
 import 'package:page_crealo/desing_system/organisms/banner_section.dart';
+import 'package:page_crealo/desing_system/organisms/collage_section.dart';
 import 'package:page_crealo/desing_system/organisms/footer_section.dart';
 import 'package:page_crealo/desing_system/organisms/services_section.dart';
 import 'package:page_crealo/desing_system/organisms/videos_section.dart';
@@ -20,6 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
   final _servicesKey = GlobalKey();
   final _aboutKey = GlobalKey();
   final _videosKey = GlobalKey();
+  final _collageKey = GlobalKey();
 
   void _scrollTo(GlobalKey key) {
     final targetContext = key.currentContext;
@@ -54,6 +56,10 @@ class _HomeScreenState extends State<HomeScreen> {
             label: 'Videos',
             onTap: () => _scrollTo(_videosKey),
           ),
+          BreakifyNavbarItem(
+            label: 'Collage',
+            onTap: () => _scrollTo(_collageKey),
+          ),
         ],
         backgroundColor: AppColors.backgroundLight,
         foregroundColor: AppColors.backgroundDark,
@@ -70,6 +76,7 @@ class _HomeScreenState extends State<HomeScreen> {
               AboutSection(key: _aboutKey),
               ServicesSection(key: _servicesKey),
               VideosSection(key: _videosKey),
+              CollageSection(key: _collageKey),
               FooterSection(
                 links: [
                   FooterLink(
@@ -87,6 +94,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   FooterLink(
                     label: 'Videos',
                     onTap: () => _scrollTo(_videosKey),
+                  ),
+                  FooterLink(
+                    label: 'Collage',
+                    onTap: () => _scrollTo(_collageKey),
                   ),
                 ],
               ),

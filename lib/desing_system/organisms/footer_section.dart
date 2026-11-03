@@ -24,7 +24,7 @@ class FooterSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BreakifySection(
-      backgroundColor: AppColors.backgroundDark,
+      backgroundColor: AppColors.backgroundLight,
       child: BreakifyContainer(
         maxWidth: const BreakifyValue(sm: 1200.0),
         padding: const BreakifyValue(
@@ -108,7 +108,7 @@ class FooterSection extends StatelessWidget {
               '© ${DateTime.now().year} Créalo. Todos los derechos reservados.',
               textAlign: TextAlign.center,
               style: AppTextStyles.small.copyWith(
-                color: AppColors.textSecondary,
+                color: AppColors.primary,
               ),
             ),
           ],
@@ -157,7 +157,7 @@ class _FooterTextButton extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 6),
         child: Text(
           label,
-          style: AppTextStyles.body.copyWith(color: AppColors.backgroundLight),
+          style: AppTextStyles.body.copyWith(color: AppColors.primary),
         ),
       ),
     );
@@ -189,7 +189,7 @@ class _FooterContact extends StatelessWidget {
             Text(
               label,
               style: AppTextStyles.body.copyWith(
-                color: AppColors.backgroundLight,
+                color: AppColors.primary,
               ),
             ),
           ],
