@@ -5,6 +5,7 @@ import 'package:page_crealo/desing_system/organisms/banner_section.dart';
 import 'package:page_crealo/desing_system/organisms/collage_section.dart';
 import 'package:page_crealo/desing_system/organisms/footer_section.dart';
 import 'package:page_crealo/desing_system/organisms/services_section.dart';
+import 'package:page_crealo/desing_system/organisms/testimonials_section.dart';
 import 'package:page_crealo/desing_system/organisms/videos_section.dart';
 import 'package:page_crealo/desing_system/tokens/app_colors.dart';
 
@@ -21,6 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
   final _aboutKey = GlobalKey();
   final _videosKey = GlobalKey();
   final _collageKey = GlobalKey();
+  final _testimonialsKey = GlobalKey();
 
   void _scrollTo(GlobalKey key) {
     final targetContext = key.currentContext;
@@ -59,6 +61,10 @@ class _HomeScreenState extends State<HomeScreen> {
             label: 'Collage',
             onTap: () => _scrollTo(_collageKey),
           ),
+          BreakifyNavbarItem(
+            label: 'Testimonios',
+            onTap: () => _scrollTo(_testimonialsKey),
+          ),
         ],
         backgroundColor: AppColors.backgroundLight,
         foregroundColor: AppColors.backgroundDark,
@@ -76,6 +82,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ServicesSection(key: _servicesKey),
               VideosSection(key: _videosKey),
               CollageSection(key: _collageKey),
+              TestimonialsSection(key: _testimonialsKey),
               FooterSection(
                 links: [
                   FooterLink(
@@ -97,6 +104,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   FooterLink(
                     label: 'Collage',
                     onTap: () => _scrollTo(_collageKey),
+                  ),
+                  FooterLink(
+                    label: 'Testimonios',
+                    onTap: () => _scrollTo(_testimonialsKey),
                   ),
                 ],
               ),

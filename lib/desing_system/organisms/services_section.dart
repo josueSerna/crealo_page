@@ -1,5 +1,7 @@
 import 'package:breakify/breakify.dart';
 import 'package:flutter/material.dart';
+import 'package:page_crealo/data/services.dart';
+import 'package:page_crealo/desing_system/pages/service_page.dart';
 
 import '../atoms/app_section_title.dart';
 import '../molecules/service_card.dart';
@@ -40,46 +42,20 @@ class ServicesSection extends StatelessWidget {
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
                 children: [
-                  ServiceCard(
-                    title: 'Gestión de redes sociales',
-                    description:
-                        'Creamos una presencia digital con intención, desde estrategia hasta contenido y planificación para tus redes.',
-                    icon: Icons.palette_outlined,
-                    buttonLabel: 'Ver planes',
-                    onPressed: () {},
-                  ),
-                  ServiceCard(
-                    title: 'Estrategia de marca',
-                    description:
-                        'Definimos tu marca, público, personalidad y comunicación para conectar con claridad y coherencia.',
-                    icon: Icons.campaign_outlined,
-                    buttonLabel: 'Construir mi marca',
-                    onPressed: () {},
-                  ),
-                  ServiceCard(
-                    title: 'Producción audiovisual',
-                    description:
-                        'Convertimos ideas en piezas audiovisuales para marcas, campañas y lanzamientos desde el concepto hasta la edición.',
-                    icon: Icons.movie_creation_outlined,
-                    buttonLabel: 'Crear mi contenido',
-                    onPressed: () {},
-                  ),
-                  ServiceCard(
-                    title: 'Fotografía de marca y producto',
-                    description:
-                        'Fotografiamos tu marca y tus productos para destacar en redes, catálogos y campañas.',
-                    icon: Icons.camera,
-                    buttonLabel: 'Ver servicio fotográfico',
-                    onPressed: () {},
-                  ),
-                  ServiceCard(
-                    title: 'Capacitaciones — Créalo 360',
-                    description:
-                        'Aprende a manejar Instagram con estrategia, contenido y orden para comunicar mejor tu marca.',
-                    icon: Icons.threesixty,
-                    buttonLabel: 'Conocer capacitaciones',
-                    onPressed: () {},
-                  ),
+                  for (final service in services)
+                    ServiceCard(
+                      title: service.name,
+                      description: service.description,
+                      icon: _iconForService(service.id),
+                      buttonLabel: 'Conocer servicio',
+                      onPressed: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute<void>(
+                            builder: (_) => ServicePage(service: service),
+                          ),
+                        );
+                      },
+                    ),
                 ],
               ),
             ],
@@ -87,5 +63,15 @@ class ServicesSection extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  IconData _iconForService(String id) {
+    return switch (id) {
+      'redes-sociales' => Icons.palette_outlined,
+      'estrategia-de-marca' => Icons.campaign_outlined,
+      'produccion-audiovisual' => Icons.movie_creation_outlined,
+      'fotografia-marca-producto' => Icons.camera,
+      _ => Icons.threesixty,
+    };
   }
 }

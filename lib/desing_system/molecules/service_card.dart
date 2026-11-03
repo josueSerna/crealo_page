@@ -51,7 +51,7 @@ class ServiceCard extends StatelessWidget {
             descriptionText,
             const SizedBox(height: 20),
             const Spacer(),
-            AppButton(label: buttonLabel, onPressed: () {}),
+            AppButton(label: buttonLabel, onPressed: onPressed ?? () {}),
             // ElevatedButton(
             //   onPressed: onPressed,
             //   style: ElevatedButton.styleFrom(

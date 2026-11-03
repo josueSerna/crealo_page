@@ -32,3 +32,6 @@ flutter:
     - assets/images/logos/logo_min.svg
     - assets/images/logos/logo_max.svg
     - assets/images/collage/
+    - assets/images/gestion/
+    - assets/images/marca/
+    - assets/images/producto/
