@@ -10,6 +10,7 @@ class ServiceCard extends StatelessWidget {
   final IconData icon;
   final String buttonLabel;
   final VoidCallback? onPressed;
+  final bool disabled;
 
   const ServiceCard({
     super.key,
@@ -18,6 +19,7 @@ class ServiceCard extends StatelessWidget {
     required this.icon,
     this.buttonLabel = 'Ver mas',
     this.onPressed,
+    this.disabled = false,
   });
 
   @override
@@ -51,25 +53,7 @@ class ServiceCard extends StatelessWidget {
             descriptionText,
             const SizedBox(height: 20),
             const Spacer(),
-            AppButton(label: buttonLabel, onPressed: onPressed ?? () {}),
-            // ElevatedButton(
-            //   onPressed: onPressed,
-            //   style: ElevatedButton.styleFrom(
-            //     backgroundColor: Colors.amber,
-            //     foregroundColor: Colors.white,
-            //     padding: const EdgeInsets.symmetric(
-            //       horizontal: 24,
-            //       vertical: 16,
-            //     ),
-            //     minimumSize: Size.zero,
-            //     tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-            //     shape: RoundedRectangleBorder(
-            //       borderRadius: BorderRadius.circular(8),
-            //     ),
-            //     elevation: 0,
-            //   ),
-            //   child: Text(buttonLabel, style: AppTextStyles.button),
-            // ),
+            AppButton(label: buttonLabel, onPressed: onPressed ?? () {}, disabled: disabled),
           ],
         ),
       ),

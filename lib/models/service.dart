@@ -31,11 +31,15 @@ class Service {
   final String name;
   final String description;
   final List<ServiceExample> examples;
+  final String buttonLabel;
+  final bool disabled;
 
   const Service({
     required this.id,
     required this.name,
     required this.description,
     required this.examples,
+    required this.buttonLabel,
+    this.disabled = false,
   });
 }

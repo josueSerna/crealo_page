@@ -47,7 +47,8 @@ class ServicesSection extends StatelessWidget {
                       title: service.name,
                       description: service.description,
                       icon: _iconForService(service.id),
-                      buttonLabel: 'Conocer servicio',
+                      buttonLabel: service.buttonLabel,
+                      disabled: service.disabled,
                       onPressed: () {
                         Navigator.of(context).push(
                           MaterialPageRoute<void>(

@@ -3,8 +3,7 @@ import 'package:page_crealo/data/social_links.dart';
 import 'package:page_crealo/models/reel_video.dart';
 import 'package:page_crealo/models/service.dart';
 
-// TODO: Replace the demonstration copy and examples with each service's
-// published work. Add new services here without creating new screens.
+
 final services = [
   Service(
     id: 'redes-sociales',
@@ -14,6 +13,7 @@ final services = [
         'Planeamos la estrategia, desarrollamos las ideas, creamos el contenido y organizamos la comunicación de tu marca para que tus redes tengan coherencia, personalidad y un objetivo claro.\n'
         'Producción audiovisual, portadas, carruseles, fotografía, plantillas, cronogramas y demás.\n'
         'Si hoy necesitas un ecosistema completo, pregunta por nuestros planes premium.',
+    buttonLabel: 'Explorar servicio',
     examples: [
       ServiceExample.image(
         title: 'Composición visual de marca',
@@ -46,6 +46,7 @@ final services = [
         'Trabajamos público, pilares de contenido, tono de comunicación, conceptos creativos y oportunidades para diferenciarte.\n'
         'Si necesitas darle ruta a tu marca para arrancar a crear, ¡Necesitas empezar por aquí!\n'
         'Esta es.',
+    buttonLabel: 'Explorar servicio',
     examples: [
       ServiceExample.image(
         title: 'Dirección visual',
@@ -69,6 +70,7 @@ final services = [
         'Conceptualizamos y producimos piezas audiovisuales para marcas, campañas, lanzamientos, productos y servicios.\n'
         'Desde la idea y el guion hasta la grabación, dirección y edición final.\n'
         '¿Solo necesitas video? Esta es la ruta.',
+    buttonLabel: 'Ver proyectos',
     examples: [
      ServiceExample.instagramVideo(
        video: ReelVideo(
@@ -103,6 +105,7 @@ final services = [
         'Porque una buena foto no solo muestra. Hace desear.\n'
         'Creamos fotografías alineadas con la personalidad de tu marca para redes sociales, catálogo y entre otros.\n'
         'Necesitar que tu marca se vea cool, ya no será un problema.',
+    buttonLabel: 'Conocer servicio',
     examples: [
       ServiceExample.image(
         title: 'Fotografía de producto 1',
@@ -138,12 +141,9 @@ final services = [
         'Capacitaciones diseñadas para emprendedores y equipos que quieren aprender a gestionar estratégicamente sus propias redes.\n'
         'Desde creación de contenido y organización del feed hasta estrategia, historias, carruseles y herramientas para convertir Instagram en un verdadero canal de comunicación.\n'
         '¡Tú y todo tu equipo tienen que hablar en el mismo idioma!',
+    buttonLabel: 'Botón activo en 2027',
+    disabled: true,
     examples: [
-      ServiceExample.image(
-        title: 'Contenido para aprender',
-        assetPath: 'assets/images/collage/collage_6.webp',
-      ),
-      ServiceExample.instagramVideo(video: reelVideos[3]),
     ],
   ),
 ];

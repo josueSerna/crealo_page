@@ -4,22 +4,32 @@ import 'package:page_crealo/desing_system/tokens/app_text_styles.dart';
 
 class AppButton extends StatelessWidget {
   final String label;
-  final VoidCallback onPressed;
+  final VoidCallback? onPressed;
+  final bool disabled;
 
-  const AppButton({super.key, required this.label, required this.onPressed});
+  const AppButton({
+    super.key,
+    required this.label,
+    required this.onPressed,
+    this.disabled = false,
+  });
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: onPressed,
+      onPressed: disabled ? null : onPressed,
       style: ElevatedButton.styleFrom(
         backgroundColor: AppColors.primary,
         foregroundColor: AppColors.white,
+        disabledBackgroundColor: AppColors.textSecondary,
+        disabledForegroundColor: AppColors.white,
         textStyle: AppTextStyles.button,
         padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
         minimumSize: Size.zero,
         tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(8),
+        ),
         elevation: 0,
       ),
       child: Text(label),
