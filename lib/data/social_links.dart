@@ -1,7 +1,10 @@
 class SocialLinks {
   const SocialLinks._();
 
-  static const whatsapp = 'https://wa.me/message/KEK7IIA5OFQRN1';
+  static const whatsappNumber = '573043617712';
+
+  static const whatsapp =
+      'https://wa.me/$whatsappNumber';
   static const instagram =
       'https://www.instagram.com/crealo.mc?exln=MXc0YTQzdmxldW90Yw%3D%3D&utm_source=qr';
   static const tiktok =

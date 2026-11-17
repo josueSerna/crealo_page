@@ -20,20 +20,22 @@ class ServicePage extends StatefulWidget {
 class _ServicePageState extends State<ServicePage> {
   String? _playingVideoId;
 
-  Future<void> _openQuote() async {
-    final message =
-        '¡Hola! Estoy interesado en cotizar el servicio de '
-        '${widget.service.name}. Me gustaría recibir más información.';
-    final baseUri = Uri.parse(SocialLinks.whatsapp);
-    final uri = baseUri.replace(queryParameters: {'text': message});
-    final launched = await launchUrl(uri, webOnlyWindowName: '_blank');
-    if (!launched && mounted) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('No se pudo abrir WhatsApp.')),
-      );
-    }
-  }
+Future<void> _openQuote() async {
+  final message =
+      '¡Hola! Estoy interesado en cotizar el servicio de '
+      '${widget.service.name}. Me gustaría recibir más información.';
 
+  final uri = Uri.https(
+    'wa.me',
+    '/${SocialLinks.whatsappNumber}',
+    {'text': message},
+  );
+
+  await launchUrl(
+    uri,
+    webOnlyWindowName: '_blank',
+  );
+}
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -1,7 +1,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:page_crealo/data/social_links.dart';
-import 'package:page_crealo/desing_system/tokens/app_colors.dart';
 import 'package:simple_icons/simple_icons.dart';
 import 'package:url_launcher/url_launcher.dart';
 
