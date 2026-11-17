@@ -8,6 +8,7 @@ import 'package:page_crealo/desing_system/organisms/services_section.dart';
 import 'package:page_crealo/desing_system/organisms/testimonials_section.dart';
 import 'package:page_crealo/desing_system/organisms/videos_section.dart';
 import 'package:page_crealo/desing_system/tokens/app_colors.dart';
+import 'package:page_crealo/widgets/whatsapp_floating_button.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -38,6 +39,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: const WhatsappFloatingButton(),
       body: BreakifyNavbar(
         logo: Image.asset('assets/images/logos/logo_min.png', height: 80),
         items: [
